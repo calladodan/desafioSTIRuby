@@ -1,21 +1,27 @@
 require_relative 'db'
 require_relative 'aluno'
 
-arquivo = DB.new("lista.csv")
 
-puts "Digite a matrícula desejada: "
-mat = gets.chomp
+while true
 
-retorno = arquivo.busca_mat(mat)
-#Aqui checa se o retorno foi uma string ou um objeto aluno
+  arquivo = DB.new("lista.csv")
 
-if retorno.is_a? Object
-  #aqui entra a lógica de gerar emails
-  aluno = Aluno.new(retorno)
+  puts "Digite a matrícula desejada: "
+  mat = gets.chomp
 
-else #aqui entra no caso de ser uma string
-  puts aluno
-  #retornar
+  retorno = arquivo.busca_mat(mat)
+
+  if retorno.is_a? Object
+    #aqui entra a lógica de gerar emails
+    aluno = Aluno.new(retorno)
+
+
+
+  else #aqui entra no caso de ser uma string
+    puts aluno
+
+  end
+
 end
 
-#Falta chamar a função que gera email, protegendo pro caso
+
