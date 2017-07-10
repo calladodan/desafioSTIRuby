@@ -1,4 +1,6 @@
 require 'csv'
+require_relative 'aluno'
+
 class DB
   def initialize (arquivo)
     @arquivo = arquivo
@@ -30,4 +32,14 @@ class DB
     false
   end
 
+  def atualiza_uffmail(aluno, uffmail)
+    CSV.open('temp.csv', 'wb') do |csv|
+      CSV.each(@arquivo)do |linha|
+        if linha.header_row?
+          csv << linha
+        end
+        elsif
+      end
+    end
+  end
 end

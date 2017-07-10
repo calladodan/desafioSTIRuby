@@ -1,5 +1,7 @@
+require_relative 'uffmail'
 require_relative 'db'
 require_relative 'aluno'
+require_relative 'interface'
 
 
 while true
@@ -11,14 +13,20 @@ while true
 
   retorno = arquivo.busca_mat(mat)
 
-  if retorno.is_a? Object
-    #aqui entra a lógica de gerar emails
+  if !retorno.is_a? String
+    # aqui entra a lógica de gerar emails
     aluno = Aluno.new(retorno)
 
+    lista = UFFMail.gera_email(aluno, arquivo)
 
-
-  else #aqui entra no caso de ser uma string
-    puts aluno
+    puts "Digite o número da opção desejada:"
+    Interface.lista_emails(lista)
+    selecao = Interface.seleciona_email(lista)
+    puts selecao
+  else # aqui entra no caso de ser uma string
+    puts retorno
+    puts "Pressione Enter para voltar ao início"
+    enter= gets.chomp
 
   end
 

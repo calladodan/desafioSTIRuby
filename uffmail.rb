@@ -3,7 +3,7 @@ require_relative 'db'
 
 class UFFMail
 
-  def gera_email(aluno, arquivo)
+  def self.gera_email(aluno, arquivo)
     nomes = aluno.nome.split(" ")
     contador = 1
     lista = []
@@ -19,13 +19,14 @@ class UFFMail
         contador+=1
         novo = nomes[0].byteslice(0,contador) << nomes[2] << "@id.uff.br"
     end
-    lista << novo
+    lista << novo.downcase
     contador = 1
 
     #Opção 2: primeiroNome-últimoNome
     #exemplo: Nome: Paulo Silva
     #primeira tentativa = paulo-silva@id.uff.br
     #segunda tentativa = paulo-silva1@id.uff.br
+    #Terceira tentativa = paulo-silva2@id.uff.br
     novo = nomes[0]<< "-" << nomes[2]
     if arquivo.existe_uffmail?(novo)
       novo << contador.to_s
@@ -37,10 +38,14 @@ class UFFMail
 
   novo<<"@id.uff.br"
   contador =1
-  lista<<novo
+  lista<<novo.downcase
 
   #Opção3: Primeira letra do primeiro nome + '.' + ultimo nome
-  novo = nomes[0].byteslice(0,contador)<<"-"<<nomes[2]
+    #exemplo: Nome: Paulo Silva
+    #primeira tentativa = p.silva@id.uff.br
+    #segunda tentativa = p.silva1@id.uff.br
+    #Terceira tentativa = p.silva2@id.uff.br
+  novo = nomes[0].byteslice(0,contador)<<"."<<nomes[2]
 
     if arquivo.existe_uffmail?(novo)
       novo << contador.to_s
@@ -49,7 +54,11 @@ class UFFMail
         novo.succ
       end
     end
-  lista << novo
-  lista
+  novo << "@id.uff.br"
+
+  lista << novo.downcase
+
+
+  return lista
   end
 end
