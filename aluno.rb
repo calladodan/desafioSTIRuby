@@ -13,7 +13,20 @@ class Aluno
     @telefone= linha["telefone"]
     @email= linha["email"]
     @uffmail= linha["uffmail"]
-    @status= linha["status"]
+    @status= adiciona_status(linha["status"])
   end
+
+  def possui_uffmail?
+    return @uffmail != nil
+  end
+
+  def ativo?
+    @status
+  end
+
+  private
+    def adiciona_status(status)
+      return status == "Ativo"
+    end
 
 end

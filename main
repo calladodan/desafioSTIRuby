@@ -1,4 +1,4 @@
-require_relative 'uffmail'
+require_relative 'gerador_uffmail'
 require_relative 'db'
 require_relative 'aluno'
 require_relative 'interface'
@@ -10,25 +10,29 @@ while true
 
   puts "Digite a matrícula desejada: "
   mat = gets.chomp
-
+  puts mat
   retorno = arquivo.busca_mat(mat)
 
-  if !retorno.is_a? String
-    # aqui entra a lógica de gerar emails
+  if retorno
+
     aluno = Aluno.new(retorno)
+    if aluno.ativo? && !aluno.possui_uffmail?
 
-    lista = UFFMail.gera_email(aluno, arquivo)
+      lista = GeradorUffmail.gera_email(aluno, arquivo)
 
-    puts "Digite o número da opção desejada:"
-    Interface.lista_emails(lista)
-    selecao = Interface.seleciona_email(lista)
-    puts selecao
-  else # aqui entra no caso de ser uma string
-    puts retorno
-    puts "Pressione Enter para voltar ao início"
-    enter= gets.chomp
+      puts "Digite o número da opção desejada:"
+      Interface.lista_emails(lista)
+
+      selecao = Interface.seleciona_email(lista)
+      arquivo.atualiza_uffmail(aluno, selecao)
+      puts "UFFMail atualizado com sucesso."
+    end
 
   end
+
+
+
+
 
 end
 
