@@ -4,36 +4,9 @@ require_relative 'aluno'
 require_relative 'interface'
 
 
-while true
 
-  arquivo = DB.new("lista.csv")
-
-  puts "Digite a matrícula desejada: "
-  mat = gets.chomp
-  puts mat
-  retorno = arquivo.busca_mat(mat)
-
-  if retorno
-
-    aluno = Aluno.new(retorno)
-    if aluno.ativo? && !aluno.possui_uffmail?
-
-      lista = GeradorUffmail.gera_email(aluno, arquivo)
-
-      puts "Digite o número da opção desejada:"
-      Interface.lista_emails(lista)
-
-      selecao = Interface.seleciona_email(lista)
-      arquivo.atualiza_uffmail(aluno, selecao)
-      puts "UFFMail atualizado com sucesso."
-    end
-
-  end
+Interface.start("lista.csv")
 
 
-
-
-
-end
 
 

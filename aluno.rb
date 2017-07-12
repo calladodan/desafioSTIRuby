@@ -24,6 +24,10 @@ class Aluno
     @status
   end
 
+  def pode_atualizar_uffmail?
+    return !possui_uffmail? && ativo?
+  end
+
   private
     def adiciona_status(status)
       return status == "Ativo"
