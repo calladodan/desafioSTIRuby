@@ -4,8 +4,8 @@ require_relative 'aluno'
 require_relative 'interface'
 
 
-
-Interface.start("lista.csv")
+arquivo = DB.new("lista.csv")
+Interface.start(arquivo)
 
 
 

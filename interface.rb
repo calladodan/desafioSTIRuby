@@ -1,6 +1,6 @@
 
 class Interface
-  def self.lista_emails(lista)
+  def self.imprime_lista_emails(lista)
     contador = 1
 
     lista.each do |opcao|
@@ -20,15 +20,12 @@ class Interface
 
   def self.start(arquivo)
 
-    arquivo = DB.new(arquivo)
-
     puts "Digite a matrícula desejada: "
     mat = gets.chomp
-    puts mat
-    retorno = arquivo.busca_mat(mat)
-
-    if retorno.is_a? Aluno
-      principal(retorno, arquivo)
+    busca = arquivo.busca_mat(mat)
+    aluno = Aluno.new(busca)
+    if aluno.is_a? Aluno
+      principal(aluno, arquivo)
     else
       mat_nao_encontrada
       start(arquivo)
@@ -36,26 +33,27 @@ class Interface
 
   end
 
-  def self.mat_nao_encontrada
-    puts "Matrícula não encontrada!"
-  end
 
   def self.principal(aluno, arquivo)
 
     if aluno.pode_atualizar_uffmail?
 
-      lista = GeradorUffmail.gera_email(aluno, arquivo)
+      lista = GeradorUffmail.gera_lista_email(aluno, arquivo)
 
       puts "Digite o número da opção desejada:"
-      Interface.lista_emails(lista)
+      Interface.imprime_lista_emails(lista)
 
       selecao = Interface.seleciona_email(lista)
-      arquivo.atualiza_uffmail(aluno, selecao)
+      arquivo.atualiza_uffmail(aluno.matricula, selecao)
       puts "UFFMail atualizado com sucesso."
     else
       !aluno.ativo? ? mensagem_nao_ativo : mensagem_possui_uffmail
     end
     start(arquivo)
+  end
+
+  def self.mat_nao_encontrada
+    puts "Matrícula não encontrada!"
   end
 
   def self.mensagem_nao_ativo

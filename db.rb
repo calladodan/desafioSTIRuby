@@ -1,20 +1,22 @@
 require 'csv'
-require_relative 'aluno'
 
 class DB
-  def initialize (arquivo)
-    @arquivo = arquivo
+  attr_reader :path
+  def initialize (path)
+    @path = path
   end
 
+  #Busca matrícula no arquivo e retorna a linha com matrícula igual
   def busca_mat(matricula)
-    CSV.foreach(@arquivo, headers:true) do |linha|
+    CSV.foreach(@path, headers:true) do |linha|
 
-      return Aluno.new(linha) if linha["matricula"]==matricula
+      return linha if linha["matricula"]==matricula
       end
   end
 
+  #Verifica se já existe um UFFMail igual ao passado no arquivo
   def existe_uffmail?(uffm)
-    CSV.foreach(@arquivo,headers:true) do |linha|
+    CSV.foreach(@path,headers:true) do |linha|
       if linha["uffmail"]==uffm
         return true
       end
@@ -22,24 +24,23 @@ class DB
     false
   end
 
-  def atualiza_uffmail(aluno, uffmail)
+  #Atualiza o arquivo, incluindo o UFFMail passado
+  def atualiza_uffmail(matricula, uffmail)
     CSV.open("temp.csv", "wb") do |csv|
 
-      CSV.foreach(@arquivo,headers:true, return_headers:true)do |linha|
+      CSV.foreach(@path,headers:true, return_headers:true)do |linha|
 
-        if linha["matricula"]== aluno.matricula
+        if linha["matricula"]== matricula
           linha["uffmail"] = uffmail
           csv << linha
-          puts linha.inspect
         else
           csv << linha
-          puts linha.inspect
         end
 
       end
     end
 
-    File.rename("temp.csv", @arquivo )
+    File.rename("temp.csv", @path )
 
   end
 end
