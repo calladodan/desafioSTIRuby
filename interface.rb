@@ -8,7 +8,6 @@ class Interface
   # e repassa para selecao de emails caso encontre matrícula
   # e aluno esteja apto a atualizar o UFFMail (Ativo e não possui UFFMail)
   # caso contrário retorna para sí própria
-
   attr_reader :arquivo
   def initialize(arquivo)
     @arquivo = arquivo
@@ -27,11 +26,21 @@ class Interface
 
   def solicita_aluno
     puts "Digite a matrícula desejada: "
-    busca = arquivo.busca_mat(gets.chomp)
-    Aluno.new(busca) if busca
+    busca = arquivo.busca_matricula(gets.chomp)
+    gerar_aluno(busca) if busca
   end
 
-  #Tela principal
+  def gerar_aluno(busca)
+    Aluno.new(
+        busca["nome"].downcase,
+        busca["matricula"],
+        busca["telefone"],
+        busca["email"],
+        busca["uffmail"],
+        busca["status"] == 'Ativo'
+    )
+  end
+
   def tela_selecao_de_emails(aluno, lista)
       selecao = seleciona_email(lista)
       selecao ? arquivo.atualiza_uffmail(aluno.matricula, selecao) : tela_selecao_de_emails(aluno, lista)
@@ -42,10 +51,9 @@ class Interface
   def gerar_lista(aluno)
     puts "Olá,#{aluno.primeiro_nome}"
     puts "Abaixo estão as opções de escolha do seu UFFMail"
-    GeradorUffmail.gera_lista_email(aluno, arquivo)
+    GeradorUffmail.new(arquivo, aluno.nome.split(' ')).gera_lista
   end
 
-  #Imprime na tela as sugestões de UFFMail de acordo com o array passado
   def imprime_lista_emails(lista)
     lista.each_with_index do |opcao, index|
       puts "#{index + 1} - #{opcao}"
@@ -53,8 +61,6 @@ class Interface
     puts "\nDigite o número da opção desejada e pressione Enter"
   end
 
-  #Solicita ao usuário um valor da sugestão e retorna a
-  #String correspondente de acordo com o valor passado
   def seleciona_email(lista)
     imprime_lista_emails(lista)
     indice = gets.chomp.to_i
@@ -77,5 +83,4 @@ class Interface
   def msg_possui_uffmail
     puts "Usuário já possui UFFMail associado."
   end
-
 end
