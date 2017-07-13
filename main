@@ -1,12 +1,5 @@
-require_relative 'gerador_uffmail'
 require_relative 'db'
-require_relative 'aluno'
 require_relative 'interface'
-
 
 arquivo = DB.new("lista.csv")
 Interface.start(arquivo)
-
-
-
-

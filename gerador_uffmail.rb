@@ -1,8 +1,8 @@
-require 'csv'
 require_relative 'db'
 
 class GeradorUffmail
 
+  #Gera um array com as sugestões de UFFMail
   def self.gera_lista_email(aluno, arquivo)
     nomes = aluno.nome.split(" ")
     lista = []
@@ -13,63 +13,79 @@ class GeradorUffmail
   end
 
   private
-
-    def self.inicial_mais_ultimo_nome(nomes, arquivo)
-      contador = 1
-      #Opção 1 Primeira letra (ou mais) do primeiro nome + ultimo nome
+  #Retorna uma string de sugestão de UFFMail de acordo com as regras abaixo
+  #Opção 1 Primeira letra (ou mais) do primeiro nome + ultimo nome
+  #Caso já exista algum assim vai aumentando a substring inicial
+  #exemplo: Nome: Paulo Silva
+  #primeira tentativa = psilva@id.uff.br
+  #segunda tentativa = pasilva@id.uff.br
+  def self.inicial_mais_ultimo_nome(nomes, arquivo)
+    contador = 1
+    sugestao = nomes[0].byteslice(0,contador) << nomes[2] << "@id.uff.br"
+    sugestao
+    while arquivo.existe_uffmail?(sugestao)
+      contador+=1
       sugestao = nomes[0].byteslice(0,contador) << nomes[2] << "@id.uff.br"
-
-      #Caso já exista algum assim vai aumentando
-      #exemplo: Nome: Paulo Silva
-      #primeira tentativa = psilva@id.uff.br
-      #segunda tentativa = pasilva@id.uff.br
-      while arquivo.existe_uffmail?(sugestao)
-        contador+=1
-        sugestao = nomes[0].byteslice(0,contador) << nomes[2] << "@id.uff.br"
-      end
-      sugestao.downcase
+      sugestao
     end
+    sugestao
+  end
 
-    def self.primeironome_hifen_ultimonome(nomes, arquivo)
-      #Opção 2: primeiroNome-últimoNome
-      #exemplo: Nome: Paulo Silva
-      #primeira tentativa = paulo-silva@id.uff.br
-      #segunda tentativa = paulo-silva1@id.uff.br
-      #Terceira tentativa = paulo-silva2@id.uff.br
-      contador=1
-      sugestao = nomes[0]<< "-" << nomes[2]
-      if arquivo.existe_uffmail?(sugestao)
-        sugestao << contador.to_s
+  #Retorna uma string de sugestão de UFFMail de acordo com as regras abaixo
+  #Opção 2: primeiroNome-últimoNome
+  #exemplo: Nome: Paulo Silva
+  #primeira tentativa = paulo-silva@id.uff.br
+  #segunda tentativa = paulo-silva1@id.uff.br
+  #Terceira tentativa = paulo-silva2@id.uff.br
+  def self.primeironome_hifen_ultimonome(nomes, arquivo)
 
-        while arquivo.existe_uffmail?(sugestao)
-          sugestao.succ
+    contador=1
+    sugestao = nomes[0]<< "-" << nomes[2]
+    sugestao_com_arroba = "#{sugestao}"
+    sugestao_com_arroba << "@id.uff.br"
 
-        end
+    if arquivo.existe_uffmail?(sugestao_com_arroba)
+      sugestao << contador.to_s
+      sugestao_com_arroba = "#{sugestao}"
+      sugestao_com_arroba<< "@id.uff.br"
+
+      while arquivo.existe_uffmail?(sugestao_com_arroba)
+        sugestao.succ!
+        sugestao_com_arroba = "#{sugestao}"
+        sugestao_com_arroba << "@id.uff.br"
       end
-      sugestao<<"@id.uff.br"
-      sugestao.downcase
-
     end
+    sugestao_com_arroba
+  end
 
-    def self.inicial_ponto_ultimonome(nomes, arquivo)
-      #Opção3: Primeira letra do primeiro nome + '.' + ultimo nome
-      #exemplo: Nome: Paulo Silva
-      #primeira tentativa = p.silva@id.uff.br
-      #segunda tentativa = p.silva1@id.uff.br
-      #Terceira tentativa = p.silva2@id.uff.br
-      contador =1
-      sugestao = nomes[0].byteslice(0,contador)<<"."<<nomes[2]
+  #Opção3: Primeira letra do primeiro nome + '.' + ultimo nome
+  #exemplo: Nome: Paulo Silva
+  #primeira tentativa = p.silva@id.uff.br
+  #segunda tentativa = p.silva1@id.uff.br
+  #Terceira tentativa = p.silva2@id.uff.br
+  def self.inicial_ponto_ultimonome(nomes, arquivo)
 
-      if arquivo.existe_uffmail?(sugestao)
-        sugestao << contador.to_s
+    contador =1
+    sugestao = "#{nomes[0].byteslice(0,contador)}.#{nomes[2]}"
 
-        while arquivo.existe_uffmail?(sugestao)
-          sugestao.succ
-        end
+    sugestao_com_arroba = "#{sugestao}"
+
+    sugestao_com_arroba << "@id.uff.br"
+
+    if arquivo.existe_uffmail?(sugestao_com_arroba)
+      sugestao << contador.to_s
+      sugestao_com_arroba = "#{sugestao}"
+      sugestao_com_arroba << "@id.uff.br"
+
+      while arquivo.existe_uffmail?(sugestao_com_arroba)
+        sugestao.succ!
+        sugestao_com_arroba = "#{sugestao}"
+        sugestao_com_arroba << "@id.uff.br"
+        puts sugestao_com_arroba
       end
-      sugestao << "@id.uff.br"
-      sugestao.downcase
     end
+    sugestao_com_arroba
+  end
 
 
 end

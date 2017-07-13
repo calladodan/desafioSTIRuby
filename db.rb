@@ -6,7 +6,7 @@ class DB
     @path = path
   end
 
-  #Busca matrícula no arquivo e retorna a linha com matrícula igual
+  #Busca matrícula no arquivo e retorna uma hash da linha com matrícula igual
   def busca_mat(matricula)
     CSV.foreach(@path, headers:true) do |linha|
 
@@ -14,7 +14,7 @@ class DB
       end
   end
 
-  #Verifica se já existe um UFFMail igual ao passado no arquivo
+  #Verifica se já existe um UFFMail igual ao passado como parâmetro no arquivo
   def existe_uffmail?(uffm)
     CSV.foreach(@path,headers:true) do |linha|
       if linha["uffmail"]==uffm
@@ -27,9 +27,7 @@ class DB
   #Atualiza o arquivo, incluindo o UFFMail passado
   def atualiza_uffmail(matricula, uffmail)
     CSV.open("temp.csv", "wb") do |csv|
-
       CSV.foreach(@path,headers:true, return_headers:true)do |linha|
-
         if linha["matricula"]== matricula
           linha["uffmail"] = uffmail
           csv << linha
@@ -41,6 +39,6 @@ class DB
     end
 
     File.rename("temp.csv", @path )
-
+    puts "UFFMail atualizado com sucesso."
   end
 end
