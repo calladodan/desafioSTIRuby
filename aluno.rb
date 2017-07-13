@@ -1,6 +1,6 @@
 
 class Aluno
-  attr_reader :nome, :matricula, :telefone, :email, :uffmail, :status
+  attr_reader :nome, :matricula, :telefone, :email, :uffmail
 
   def initialize(csv_row)
     @nome = csv_row["nome"].downcase
@@ -20,7 +20,7 @@ class Aluno
   end
 
   def pode_atualizar_uffmail?
-    return !possui_uffmail? && ativo?
+    !possui_uffmail? && ativo?
   end
 
   def primeiro_nome

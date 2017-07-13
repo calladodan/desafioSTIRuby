@@ -1,3 +1,3 @@
 nome = "daniel callado parrilha de lima"
-cap
-puts cap
+
+puts nome.split.map(&:capitalize).join(' ')

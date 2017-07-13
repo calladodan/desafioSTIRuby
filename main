@@ -1,5 +1,8 @@
 require_relative 'db'
 require_relative 'interface'
 
-arquivo = DB.new("lista.csv")
-Interface.start(arquivo)
+PATH = 'lista.csv'
+
+loop do
+  Interface.start(DB.new(PATH))
+end
