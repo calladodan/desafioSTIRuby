@@ -14,7 +14,7 @@ class Interface
   end
 
   def start
-    aluno = solicita_aluno
+    aluno = solicita_matricula
     return msg_mat_nao_encontrada unless aluno
 
     if aluno.pode_atualizar_uffmail?
@@ -24,7 +24,7 @@ class Interface
     end
   end
 
-  def solicita_aluno
+  def solicita_matricula
     puts "Digite a matrícula desejada: "
     busca = arquivo.busca_matricula(gets.chomp)
     gerar_aluno(busca) if busca

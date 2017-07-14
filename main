@@ -4,5 +4,5 @@ require_relative 'interface'
 PATH = 'lista.csv'
 
 loop do
-  Interface.start(DB.new(PATH))
+  Interface.new(DB.new(PATH)).start
 end
