@@ -33,6 +33,5 @@ class DB
     end
 
     File.rename("temp.csv", path )
-    puts "UFFMail atualizado com sucesso."
   end
 end

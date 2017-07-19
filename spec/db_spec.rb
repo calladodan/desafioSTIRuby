@@ -36,5 +36,16 @@ describe DB do
       end
     end
   end
+
+  describe "#atualiza_uffmail" do
+    context "quando encontra a linha com a matricula igual" do
+      it "inclui o 'uffmail' no campo correspondente da linha do arquivo" do
+        arquivo.atualiza_uffmail(ativo_sem_uffmail,"novo_uffmail@id.uff.br")
+        busca = arquivo.busca_matricula(ativo_sem_uffmail)
+        expect(busca["uffmail"]).to eq("novo_uffmail@id.uff.br")
+        arquivo.atualiza_uffmail(ativo_sem_uffmail,nil)
+      end
+    end
+  end
 end
 
