@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9fee83f2-7302-40fd-ba74-c5137e556549" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/.db.rb.swp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/.interface.rb.swp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/.lista.csv.swp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spec/.aluno_spec.rb.swp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spec/.db_spec.rb.swp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aluno.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/interface.rb" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/aluno_spec.rb" afterPath="$PROJECT_DIR$/spec/aluno_spec.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/interface.rb" afterPath="$PROJECT_DIR$/lib/interface.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,34 +17,64 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/desafiosti@main.coverage" NAME="main Coverage Results" MODIFIED="1500050021511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="desafiosti" />
     <SUITE FILE_PATH="coverage/desafiosti@teste.coverage" NAME="teste Coverage Results" MODIFIED="1499972855892" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="desafiosti" />
-    <SUITE FILE_PATH="coverage/desafiosti@main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1500474119308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib" MODULE_NAME="desafiosti" />
+    <SUITE FILE_PATH="coverage/desafiosti@main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1500476853888" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib" MODULE_NAME="desafiosti" />
     <SUITE FILE_PATH="coverage/desafiosti@db.coverage" NAME="db Coverage Results" MODIFIED="1499789017491" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="desafiosti" />
     <SUITE FILE_PATH="coverage/desafiosti@interface.coverage" NAME="interface Coverage Results" MODIFIED="1499881561961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="desafiosti" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="interface.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/interface.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="940">
-              <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="main" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/main">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="140">
-              <caret line="7" column="3" lean-forward="false" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+              <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gerador_uffmail.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="lista.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/lista.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="79" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="db_spec.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spec/db_spec.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="aluno.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/aluno.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="interface.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/interface.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-763">
+              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gerador_uffmail.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/gerador_uffmail.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-1270">
@@ -95,6 +122,8 @@
         <option value="$PROJECT_DIR$/main" />
         <option value="$PROJECT_DIR$/lib/main" />
         <option value="$PROJECT_DIR$/lib/gerador_uffmail.rb" />
+        <option value="$PROJECT_DIR$/lib/interface.rb" />
+        <option value="$PROJECT_DIR$/lib/lista.csv" />
       </list>
     </option>
   </component>
@@ -137,6 +166,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="desafiosti" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="desafiosti" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="desafiosti" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spec" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -454,7 +497,7 @@
       <workItem from="1499868721693" duration="13449000" />
       <workItem from="1499961982065" duration="17813000" />
       <workItem from="1500048562068" duration="3942000" />
-      <workItem from="1500473285422" duration="2337000" />
+      <workItem from="1500473285422" duration="3726000" />
     </task>
     <task id="LOCAL-00001" summary="Inicializando a função gera_email">
       <created>1499440146680</created>
@@ -467,7 +510,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74625000" />
+    <option name="totallyTimeSpent" value="76014000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -517,10 +560,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/main" />
-    <entry file="file://$PROJECT_DIR$/db.rb" />
-    <entry file="file://$PROJECT_DIR$/gerador_uffmail.rb" />
-    <entry file="file://$PROJECT_DIR$/teste.rb" />
     <entry file="file://$PROJECT_DIR$/aluno.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -646,27 +685,59 @@
     <entry file="file://$PROJECT_DIR$/teste.rb" />
     <entry file="file://$PROJECT_DIR$/lista.csv" />
     <entry file="file://$PROJECT_DIR$/gerador_uffmail.rb" />
+    <entry file="file://$PROJECT_DIR$/main" />
+    <entry file="file://$PROJECT_DIR$/lib/gerador_uffmail.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1270">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/interface.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="940">
+        <state relative-caret-position="580">
           <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main" />
-    <entry file="file://$PROJECT_DIR$/lib/main">
+    <entry file="file://$PROJECT_DIR$/lib/aluno.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="3" lean-forward="false" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/gerador_uffmail.rb">
+    <entry file="file://$PROJECT_DIR$/spec/db_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1270">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/lista.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/main">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/interface.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-763">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding />
         </state>
       </provider>

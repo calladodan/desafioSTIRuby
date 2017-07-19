@@ -27,7 +27,6 @@ class Interface
   def solicita_matricula
     puts "Digite a matrícula desejada: "
     busca = arquivo.busca_matricula(gets.chomp)
-    puts busca.is_a? CSV::Row
     gerar_aluno(busca) if busca
   end
 
