@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9fee83f2-7302-40fd-ba74-c5137e556549" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/db.rb" afterPath="$PROJECT_DIR$/lib/db.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/db_spec.rb" afterPath="$PROJECT_DIR$/spec/db_spec.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,39 +31,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lista.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/lista.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="79" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="db_spec.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spec/db_spec.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="47" column="7" lean-forward="true" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="db.rb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/db.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="34" column="34" lean-forward="false" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
-              <folding>
-                <element signature="e#172#316#0" expanded="false" />
-                <element signature="e#399#563#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="teste_lista.csv" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spec/teste_lista.csv">
           <provider selected="true" editor-type-id="text-editor">
@@ -76,11 +41,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="aluno.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/aluno.rb">
+      <file leaf-file-name="gerador_uffmail.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/gerador_uffmail.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="-720">
+              <caret line="0" column="21" lean-forward="true" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gerador_uffmail_spec.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/spec/gerador_uffmail_spec.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -89,18 +64,18 @@
       <file leaf-file-name="interface.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/interface.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-724">
+            <state relative-caret-position="-424">
               <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gerador_uffmail.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/gerador_uffmail.rb">
+      <file leaf-file-name="db_spec.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spec/db_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1270">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="940">
+              <caret line="47" column="7" lean-forward="true" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -149,6 +124,7 @@
         <option value="$PROJECT_DIR$/spec/teste_lista.csv" />
         <option value="$PROJECT_DIR$/spec/db_spec.rb" />
         <option value="$PROJECT_DIR$/lib/db.rb" />
+        <option value="$PROJECT_DIR$/spec/gerador_uffmail_spec.rb" />
       </list>
     </option>
   </component>
@@ -522,7 +498,7 @@
       <workItem from="1499868721693" duration="13449000" />
       <workItem from="1499961982065" duration="17813000" />
       <workItem from="1500048562068" duration="3942000" />
-      <workItem from="1500473285422" duration="9739000" />
+      <workItem from="1500473285422" duration="12659000" />
     </task>
     <task id="LOCAL-00001" summary="Inicializando a função gera_email">
       <created>1499440146680</created>
@@ -535,7 +511,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82027000" />
+    <option name="totallyTimeSpent" value="84947000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -586,7 +562,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/main" />
     <entry file="file://$PROJECT_DIR$/interface.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1120">
@@ -697,14 +672,6 @@
     <entry file="file://$PROJECT_DIR$/lista.csv" />
     <entry file="file://$PROJECT_DIR$/gerador_uffmail.rb" />
     <entry file="file://$PROJECT_DIR$/main" />
-    <entry file="file://$PROJECT_DIR$/lib/gerador_uffmail.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1270">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/interface.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="580">
@@ -713,10 +680,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/lista.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/aluno.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/db_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="940">
+          <caret line="47" column="7" lean-forward="true" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -731,16 +714,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/interface.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-724">
+        <state relative-caret-position="-424">
           <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/lista.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="79" />
           <folding />
         </state>
       </provider>
@@ -753,22 +728,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/db_spec.rb">
+    <entry file="file://$PROJECT_DIR$/lib/db.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="47" column="7" lean-forward="true" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
+        <state relative-caret-position="680">
+          <caret line="34" column="34" lean-forward="false" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/db.rb">
+    <entry file="file://$PROJECT_DIR$/lib/gerador_uffmail.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="34" column="34" lean-forward="false" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
-          <folding>
-            <element signature="e#172#316#0" expanded="false" />
-            <element signature="e#399#563#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="-720">
+          <caret line="0" column="21" lean-forward="true" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/gerador_uffmail_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="6" lean-forward="false" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
