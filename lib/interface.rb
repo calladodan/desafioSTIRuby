@@ -25,19 +25,19 @@ class Interface
   end
 
   def solicita_matricula
-    puts "Digite a matrícula desejada: "
+    puts 'Digite a matrícula desejada: '
     busca = arquivo.busca_matricula(gets.chomp)
     gerar_aluno(busca) if busca
   end
 
   def gerar_aluno(busca)
     Aluno.new(
-        busca["nome"].downcase,
-        busca["matricula"],
-        busca["telefone"],
-        busca["email"],
-        busca["uffmail"],
-        busca["status"] == 'Ativo'
+        busca['nome'].downcase,
+        busca['matricula'],
+        busca['telefone'],
+        busca['email'],
+        busca['uffmail'],
+        busca['status'] == 'Ativo'
     )
   end
 
@@ -50,7 +50,7 @@ class Interface
 
   def gerar_lista(aluno)
     puts "Olá,#{aluno.primeiro_nome}"
-    puts "Abaixo estão as opções de escolha do seu UFFMail"
+    puts 'Abaixo estão as opções de escolha do seu UFFMail'
     GeradorUffmail.new(arquivo, aluno.nome.split(' ')).gera_lista
   end
 
@@ -58,7 +58,7 @@ class Interface
     lista.each_with_index do |opcao, index|
       puts "#{index + 1} - #{opcao}"
     end
-    puts "\nDigite o número da opção desejada e pressione Enter"
+    puts '\nDigite o número da opção desejada e pressione Enter'
   end
 
   def seleciona_email(lista)
@@ -66,7 +66,7 @@ class Interface
     indice = gets.chomp.to_i
 
     unless (1..lista.length).cover? indice
-      puts "Valor inválido."
+      puts 'Valor inválido.'
       return nil
     end
     lista[indice-1]
@@ -77,10 +77,10 @@ class Interface
   end
 
   def msg_nao_ativo
-    puts "Usuário não está ativo"
+    puts 'Usuário não está ativo'
   end
 
   def msg_possui_uffmail
-    puts "Usuário já possui UFFMail associado."
+    puts 'Usuário já possui UFFMail associado.'
   end
 end

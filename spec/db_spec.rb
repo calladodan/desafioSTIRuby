@@ -1,8 +1,7 @@
 require 'db'
-#Verificar como definir o teste de atualizar_uffmail
+
 describe DB do
-  let(:path){"spec/teste_lista.csv"}
-  let(:arquivo){DB.new(path)}
+  let(:arquivo){DB.new('spec/teste_lista.csv')}
   let(:ativo_com_uffmail){"105794"}
   let(:ativo_sem_uffmail){"109647"}
   let(:inativo_com_uffmail){"101209"}
